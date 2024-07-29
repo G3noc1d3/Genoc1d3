@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  
+<title style="font-family: Gill sans;">Genoc1d3</title>
+
+    <meta charset="utf-8">
+<meta name="viewport" content="device-width, initial-scale=1"></head>
+
+   <i style="color: whitesmoke;"><h1> murder case: numero tres</h1></i>
+   <i style="color: gold; text-align: center;">The Garden Party Poisoning</i>
+
+<style>
+  body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+  }
+  video {
+      border: 5px solid #333;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 600px;
+      height: auto;
+  }
+</style>
+
+</head>
+
+<body style="background-color: black;">
+<span style="font-weight: bold ;  color:darkred"><h2>During an exclusive party at the Brooksville Yacht Club, the influential lawyer, Mr. Robert Caldwell, was found dead in the club’s lounge. Robert had been stabbed with a letter opener, and his body was discovered by a staff member just before midnight. Detective Emma Harper was called to investigate the case. The party was attended by many notable guests, several of whom had motives for wanting Robert dead.</h2></span>
+  <span style="font-weight: bold;  color: white;">
+    <h2>Suspects list</h2>
+   <li style="color: darkred;">Ms. Laura Mitchell (Robert’s Client)</li>
+      <ul> <lis>Laura was a wealthy socialite who had recently lost a high-profile case that Robert had represented. She blamed Robert for the loss, believing his negligence cost her a fortune.</lis>
+     <br><list>Laura stated she was in the powder room during the time of the murder, but her alibi was weak as no one saw her enter or leave.</list></ul>
+
+<br><br>
+  <li style="color: darkred;">Mr. James Reynolds (Club President)</li>
+     <ul><li>James had a long-standing rivalry with Robert over club leadership and policies. Recently, Robert had uncovered evidence of financial mismanagement by James.    </li>
+     <li>James claimed he was mingling with guests on the deck when the murder occurred, but several guests reported not seeing him for a significant period.</li></ul>
+
+
+<br><br>
+   <li style="color: darkred;">Mr. Peter Caldwell (Robert’s Brother)</li>
+      <ul><li>Peter had a strained relationship with Robert due to a family inheritance dispute. Robert had recently won a legal battle, leaving Peter with almost nothing.</li>
+      <li>Peter mentioned he was at the bar discussing business with another guest, but no one could confirm his presence during the critical time.</li></ul>
+
+
+
+  <br><br>
+   <li style="color: darkred;">Ms. Susan Bennett (Club Treasurer)</li>
+     <ul><li>Susan had been working closely with Robert to expose financial irregularities in the club’s accounts, which implicated several high-ranking members, including herself.</li>
+      <li>Susan claimed she was in the office reviewing financial documents, but security footage showed her near the lounge.</li>
+
+     </ul>
+
+<br><br>
+
+<style>
+  .inp {
+      outline: none;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-inline-start: 10px;
+      font-size: 14px;
+      border-radius: 10px;
+      border: 2px solid darkred; 
+      box-shadow: 0 0 10px darkred; 
+  }
+  .credit {
+      font-weight: bold;
+      color: rgb(255, 255, 255);
+  }
+  .right {
+      display: none;
+      color: rgb(5, 228, 5);
+  }
+  .lose {
+      display: none;
+      color: red;
+  }
+  .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 2em;
+      display: none;
+  }
+</style>
+</head>
+<body>
+<input type="text" id="inp" class="inp">
+<button onclick="answer()" class="submit" id="submit">Submit</button>
+
+<p id="right" class="right">Congrats detective you got it right, as always.</p>
+<p id="lose" class="lose">You have failed detective, you should have paid more attention.</p>
+
+<div class="overlay" id="overlay">You have failed detective, you should have paid more attention. Reload the page to try again.</div>
+
+<span class="credit">
+  <h3>Made by</h3>
+</span>
+<p>-D4rk</p>
+
+<script>
+  function answer() {
+      if (document.getElementById("inp").value === "Liam Carter (Victor’s Former Student)" || document.getElementById("inp").value === "Liam Carter") {
+          document.getElementById("right").style.display = "inline-block";
+          document.getElementById("lose").style.display = "none";
+      } else {
+          document.getElementById("lose").style.display = "inline-block";
+          document.getElementById("right").style.display = "none";
+
+          // Disable all interactive elements
+          document.querySelectorAll('input, button').forEach(element => {
+              element.disabled = true;
+          });
+
+          // Show overlay
+          document.getElementById('overlay').style.display = 'flex';
+      }
+  }
+</script>
+
+<style>
+    .question-mark {
+      position: absolute;
+      color: darkred;
+      font-size: 25px;
+      animation: fade 2s infinite;
+    }
+
+    @keyframes fade {
+      0% { opacity: 0; }
+      50% { opacity: 1; }
+      100% { opacity: 0; }
+    }
+  </style>
+
+<script>
+    function createQuestionMark() {
+      const questionMark = document.createElement('div');
+      questionMark.className = 'question-mark';
+      questionMark.textContent = '?';
+
+      document.body.appendChild(questionMark);
+
+      const x = Math.random() * window.innerWidth;
+      const y = Math.random() * window.innerHeight;
+
+      questionMark.style.left = `${x}px`;
+      questionMark.style.top = `${y}px`;
+
+      setTimeout(() => {
+        questionMark.remove();
+      }, 2000);
+    }
+
+    setInterval(createQuestionMark, 500);
+  </script>
+
+
+</body>
+
+</html>
